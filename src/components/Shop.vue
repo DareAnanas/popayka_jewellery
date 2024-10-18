@@ -7,7 +7,7 @@ export default {
   },
   mounted() {
     // Fetch data from the Express server
-    fetch('/api/data')
+    fetch('/api/data/products')
       .then(response => response.json())
       .then(data => {
         this.jewelryItems = data;
@@ -32,7 +32,7 @@ export default {
           <div class="box">
             <a href="">
               <div class="img-box">
-                <img :src="`api/${item.id}.png`" alt="">
+                <img :src="`api/products/${item.id}.png`" alt="">
               </div>
               <div class="detail-box">
                 <h6>

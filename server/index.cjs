@@ -30,8 +30,19 @@ app.get('/', (req, res) => {
 });
 
 // Define route to fetch data from the table
-app.get('/api/data', (req, res) => {
+app.get('/api/data/products', (req, res) => {
     const sql = 'SELECT id, name, price FROM products'; // Replace with your actual table name
+    db.query(sql, (err, results) => {
+        if (err) {
+            res.status(500).send('Error retrieving data');
+        } else {
+            res.json(results);
+        }
+    });
+});
+
+app.get('/api/data/workers', (req, res) => {
+    const sql = 'SELECT id, name, position, description FROM workers'; // Replace with your actual table name
     db.query(sql, (err, results) => {
         if (err) {
             res.status(500).send('Error retrieving data');

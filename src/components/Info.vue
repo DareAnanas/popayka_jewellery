@@ -48,7 +48,7 @@
             </h4>
             <div class="insta_box">
               <div class="img-box">
-                <img src="@/assets/images/1.png" alt="">
+                <img src="@/assets/images/products/1.png" alt="">
               </div>
               <p>
                 long established fact that a reader
@@ -56,7 +56,7 @@
             </div>
             <div class="insta_box">
               <div class="img-box">
-                <img src="@/assets/images/2.png" alt="">
+                <img src="@/assets/images/products/2.png" alt="">
               </div>
               <p>
                 long established fact that a reader
