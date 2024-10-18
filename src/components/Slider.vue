@@ -12,12 +12,12 @@
             <br> Попайки
           </h1>
           <p>
-            It is a long established fact that a reader will be distracted by the readable content of a page when
-            looking at its layout. The point of using Lorem
+            Ми створюємо прикраси, що зберігають емоції та стають частиною ваших історій. 
+            Кожен виріб у нас – це поєднання традицій, сучасних технологій та натхнення.
           </p>
           <div>
             <a href="" class="slider-link">
-              Shop Now
+              До товарів
             </a>
           </div>
         </div>
