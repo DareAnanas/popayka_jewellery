@@ -40,8 +40,8 @@ export default {
       <div v-for="(worker, index) in workers" :key="worker.id" class="row" :class="getWorkerAlign(index)">
         <div class="card mb-3" style="max-width: 540px;">
           <div class="row no-gutters">
-            <div class="col-md-4">
-              <img src="..." class="card-img" alt="...">
+            <div class="col-md-4 d-flex align-items-center">
+              <img :src="`/api/workers/${index+1}.png`" class="card-img" alt="...">
             </div>
             <div class="col-md-8">
               <div class="card-body">
