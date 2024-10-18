@@ -7,12 +7,7 @@ import AboutView from './views/AboutView.vue';
 
 <template>
   <Header></Header>
-  <RouterView v-slot="{ Component }">
-    <transition name="fade">
-      <component :is="Component" />
-    </transition>
-  </RouterView>
-  
+  <RouterView></RouterView>
 </template>
 
 <style scoped>
