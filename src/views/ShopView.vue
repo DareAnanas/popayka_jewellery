@@ -1,3 +1,11 @@
+<script setup>
+import Shop from '@/components/Shop.vue';
+import Info from '@/components/Info.vue';
+import Footer from '@/components/Footer.vue';
+</script>
+
 <template>
-  <h1>This is the shop page</h1>
+  <Shop></Shop>
+  <Info></Info>
+  <Footer></Footer>
 </template>

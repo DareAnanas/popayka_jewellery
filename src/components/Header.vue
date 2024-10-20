@@ -35,10 +35,10 @@ export default {
               <RouterLink class="nav-link" to="/">Головна<span class="sr-only">(current)</span></RouterLink>
             </li>
             <li class="nav-item">
-              <RouterLink class="nav-link" to="/about">Про нас<span class="sr-only">(current)</span></RouterLink>
+              <RouterLink class="nav-link" to="/shop">Каталог<span class="sr-only">(current)</span></RouterLink>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+              <RouterLink class="nav-link" to="/about">Про нас<span class="sr-only">(current)</span></RouterLink>
             </li>
           </ul>
         </div>
