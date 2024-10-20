@@ -10,12 +10,14 @@ import Footer from '@/components/Footer.vue';
 </script>
 
 <template>
-  <Slider></Slider>
-  <Shop></Shop>
-  <About></About>
-  <Offer></Offer>
-  <Blog></Blog>
-  <Client></Client>
-  <Info></Info>
-  <Footer></Footer> 
+  <div>
+    <Slider></Slider>
+    <Shop></Shop>
+    <About></About>
+    <Offer></Offer>
+    <Blog></Blog>
+    <Client></Client>
+    <Info></Info>
+    <Footer></Footer>
+  </div>
 </template>

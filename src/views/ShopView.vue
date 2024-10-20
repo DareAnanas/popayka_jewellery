@@ -5,7 +5,9 @@ import Footer from '@/components/Footer.vue';
 </script>
 
 <template>
-  <Shop></Shop>
-  <Info></Info>
-  <Footer></Footer>
+  <div>
+    <Shop></Shop>
+    <Info></Info>
+    <Footer></Footer>
+  </div>
 </template>

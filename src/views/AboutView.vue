@@ -4,9 +4,11 @@ import Footer from '@/components/Footer.vue';
 import Info from '@/components/Info.vue';
 </script>
 <template>
-  <Team></Team>
-  <Info></Info>
-  <Footer></Footer>
+  <div>
+    <Team></Team>
+    <Info></Info>
+    <Footer></Footer>
+  </div>
 </template>
 
 <style scoped>
