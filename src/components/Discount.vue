@@ -23,7 +23,7 @@ export default {
       })
       .catch(error => {
         console.error('Error fetching jewelry items:', error);
-      }).finally(() => this.loading = false);
+      })
   }
 };
 
