@@ -10,7 +10,7 @@ export default {
     fetch('/api/data/products')
       .then(response => response.json())
       .then(data => {
-        this.jewelryItems = data;
+        this.jewelryItems = data.slice(0, 8);
       })
       .catch(error => {
         console.error('Error fetching jewelry items:', error);

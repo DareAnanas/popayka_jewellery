@@ -38,6 +38,9 @@ export default {
               <RouterLink class="nav-link" to="/shop">Каталог<span class="sr-only">(current)</span></RouterLink>
             </li>
             <li class="nav-item">
+              <RouterLink class="nav-link" to="/offers">Пропозиції<span class="sr-only">(current)</span></RouterLink>
+            </li>
+            <li class="nav-item">
               <RouterLink class="nav-link" to="/about">Про нас<span class="sr-only">(current)</span></RouterLink>
             </li>
           </ul>
@@ -53,9 +56,10 @@ export default {
             <div id="myNav" class="overlay" :class="{menu_width: isActiveNav}">
               <div class="overlay-content">
                 <RouterLink @click="openNav" to="/">Головна</RouterLink>
+                <RouterLink @click="openNav" to="/shop">Каталог</RouterLink>
+                <RouterLink @click="openNav" to="/offers">Пропозиції</RouterLink>
                 <RouterLink @click="openNav" to="/about">Про нас</RouterLink>
-                <RouterLink @click="openNav" to="/shop">Shop</RouterLink>
-                <RouterLink @click="openNav" to="/blog">Blog</RouterLink>
+                <RouterLink @click="openNav" to="/blog">Блог</RouterLink>
               </div>
             </div>
           </div>

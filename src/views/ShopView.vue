@@ -1,6 +1,6 @@
 <script setup>
 import Catalog from '@/components/Catalog.vue';
-import Info from '@/components/Info.vue';
+import Info from '@/components/FooterInfo.vue';
 import Footer from '@/components/Footer.vue';
 </script>
 

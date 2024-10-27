@@ -7,6 +7,7 @@ const app = express();
 app.use(cors()); // To enable CORS for Vue.js frontend
 app.use(express.static(path.join(__dirname, '../dist')));
 app.use('/api', express.static(path.join(__dirname, '../src/assets/images')));
+app.use('/api', express.static(path.join(__dirname, '../src/assets/json')));
 
 // Create connection to MariaDB
 const db = mysql.createConnection({

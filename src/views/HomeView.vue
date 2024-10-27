@@ -5,7 +5,7 @@ import About from '@/components/About.vue';
 import Offer from '@/components/Offer.vue';
 import Blog from '@/components/Blog.vue';
 import Client from '@/components/Client.vue';
-import Info from '@/components/Info.vue';
+import Info from '@/components/FooterInfo.vue';
 import Footer from '@/components/Footer.vue';
 </script>
 

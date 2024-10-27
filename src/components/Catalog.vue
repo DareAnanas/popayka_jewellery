@@ -84,7 +84,7 @@ export default {
         }
       })
       .catch(error => {
-        console.error('Error fetching product types:', error);
+        console.error('Error fetching product metals:', error);
       });
 
     fetch('/api/data/product-colors')

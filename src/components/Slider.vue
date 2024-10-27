@@ -16,9 +16,9 @@
             Кожен виріб у нас – це поєднання традицій, сучасних технологій та натхнення.
           </p>
           <div>
-            <a href="" class="slider-link">
+            <RouterLink to="/shop" class="slider-link">
               До товарів
-            </a>
+            </RouterLink>
           </div>
         </div>
       </div>

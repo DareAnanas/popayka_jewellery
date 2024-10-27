@@ -7,11 +7,11 @@
             <img src="@/assets/images/o1.jpg" alt="">
             <div class="detail-box">
               <h2>
-                Upto 15% Off
+                Знижка 15% на прикраси з діамантами
               </h2>
-              <a href="">
-                Shop Now
-              </a>
+              <RouterLink to="/offers">
+                Пропозиції
+              </RouterLink>
             </div>
           </div>
         </div>
@@ -20,22 +20,22 @@
             <img src="@/assets/images/o2.jpg" alt="">
             <div class="detail-box">
               <h2>
-                Upto 10% Off
+                Знижка до 10% на вироби з малахіту
               </h2>
-              <a href="">
-                Shop Now
-              </a>
+              <RouterLink to="/offers">
+                Пропозиції
+              </RouterLink>
             </div>
           </div>
           <div class="box offer-box3">
             <img src="@/assets/images/o3.jpg" alt="">
             <div class="detail-box">
               <h2>
-                Upto 20% Off
+                Платинові вироби 20% знижка
               </h2>
-              <a href="">
-                Shop Now
-              </a>
+              <RouterLink to="/offers">
+                Пропозиції
+              </RouterLink>
             </div>
           </div>
         </div>
