@@ -21,7 +21,6 @@ export default {
       this.isOpen = !this.isOpen;
     },
     closeDropdown() {
-      console.log('closeDropdown')
       this.isOpen = false;
     },
     selectOption(option) {

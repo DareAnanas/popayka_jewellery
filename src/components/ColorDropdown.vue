@@ -28,7 +28,6 @@ export default {
       this.selectedOption = option;
       this.$emit('update:modelValue', option);
       this.closeDropdown();
-      console.log(this.isOpen);
     },
   },
 };
