@@ -1,13 +1,22 @@
 <script setup>
-import Shop from '@/components/Shop.vue';
+import Catalog from '@/components/Catalog.vue';
 import Info from '@/components/Info.vue';
 import Footer from '@/components/Footer.vue';
 </script>
 
 <template>
   <div>
-    <Shop></Shop>
+    <Catalog></Catalog>
     <Info></Info>
     <Footer></Footer>
   </div>
 </template>
+
+<style scoped>
+.layout_padding {
+  padding: 50px;
+}
+.heading_container {
+  margin-bottom: 50px;
+}
+</style>

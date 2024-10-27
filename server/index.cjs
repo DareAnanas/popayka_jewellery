@@ -41,8 +41,77 @@ app.get('/api/data/products', (req, res) => {
     });
 });
 
+app.get('/api/data/products-extended', (req, res) => {
+    const sql =  // Replace with your actual table name   
+    `
+    SELECT 
+        p.id, 
+        p.name, 
+        p.price, 
+        pt.type,
+        materials.name AS metal_name,
+        IFNULL(
+            GROUP_CONCAT(m.name, ' (', m.color, ')' SEPARATOR ', '), 
+            'No additional materials'
+        ) AS materials_list
+    FROM 
+        products AS p
+    JOIN 
+        products_types AS pt ON p.type_id = pt.id
+    JOIN 
+        materials ON p.metal_id = materials.id
+    LEFT JOIN 
+        product_stones AS ps ON p.id = ps.product_id
+    LEFT JOIN 
+        materials AS m ON ps.material_id = m.id
+    GROUP BY 
+        p.id, p.name, p.price, pt.type;
+    `;
+    
+    db.query(sql, (err, results) => {
+        if (err) {
+            res.status(500).send('Error retrieving data');
+        } else {
+            res.json(results);
+        }
+    });
+});
+
 app.get('/api/data/workers', (req, res) => {
     const sql = 'SELECT id, name, position, description FROM workers'; // Replace with your actual table name
+    db.query(sql, (err, results) => {
+        if (err) {
+            res.status(500).send('Error retrieving data');
+        } else {
+            res.json(results);
+        }
+    });
+});
+
+app.get('/api/data/product-types', (req, res) => {
+    const sql = 'SELECT id, type FROM products_types'; // Replace with your actual table name
+    db.query(sql, (err, results) => {
+        if (err) {
+            res.status(500).send('Error retrieving data');
+        } else {
+            res.json(results);
+        }
+    });
+});
+
+app.get('/api/data/product-metals', (req, res) => {
+    const sql = 'SELECT id, name FROM materials WHERE materials.class = "благородний метал"'; // Replace with your actual table name
+    db.query(sql, (err, results) => {
+        if (err) {
+            res.status(500).send('Error retrieving data');
+        } else {
+            res.json(results);
+        }
+    });
+});
+
+app.get('/api/data/product-colors', (req, res) => {
+    const sql = 'SELECT id, name, code FROM color_codes'; // Replace with your actual table name
     db.query(sql, (err, results) => {
         if (err) {
             res.status(500).send('Error retrieving data');

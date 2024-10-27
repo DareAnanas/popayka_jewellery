@@ -55,9 +55,9 @@ export default {
         </div>
       </div>
       <div class="btn-box">
-        <a href="">
+        <RouterLink to="/shop">
           Перейти до каталогу
-        </a>
+        </RouterLink>
       </div>
     </div>
   </section>
