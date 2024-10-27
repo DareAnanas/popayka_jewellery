@@ -11,8 +11,20 @@ export default {
         { title: 'Знижка до 10% на вироби з малахіту', content: 'Знижка до 10% на вироби з малахіту' },
         { title: 'Платинові вироби 20% знижка', content: 'Content for item 3.' },
       ],
+      jewelryItems: []
     };
   },
+  mounted() {
+    // Fetch data from the Express server
+    fetch('/api/data/products')
+      .then(response => response.json())
+      .then(data => {
+        this.jewelryItems = data.slice(0, 3);
+      })
+      .catch(error => {
+        console.error('Error fetching jewelry items:', error);
+      }).finally(() => this.loading = false);
+  }
 };
 
 </script>
@@ -25,7 +37,7 @@ export default {
           Пропозиції
         </h2>
       </div>
-      <Accordion :items="accordionItems" />
+      <Accordion :items="accordionItems" :contentItems="jewelryItems"/>
     </div>
   </section>
 </template>
