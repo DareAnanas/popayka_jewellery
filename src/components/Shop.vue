@@ -6,7 +6,6 @@ export default {
     }
   },
   mounted() {
-    // Fetch data from the Express server
     fetch('/api/data/products')
       .then(response => response.json())
       .then(data => {
