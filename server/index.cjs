@@ -11,7 +11,8 @@ app.use('/api', express.static(path.join(__dirname, '../src/assets/json')));
 
 // Create connection to MariaDB
 const db = mysql.createConnection({
-    host: 'junction.proxy.rlwy.net:32806', // Replace with your MariaDB host
+    host: 'junction.proxy.rlwy.net', // Replace with your MariaDB host
+    port: 32806,
     user: 'root', // Replace with your MariaDB user
     password: 'LmdcX~7_5rUGyfhT.aYg68FqukY1UCjT', // Replace with your MariaDB password
     database: 'railway', // Replace with your MariaDB database
