@@ -15,27 +15,36 @@ export default {
       colorOptions: [],
       selectedProductOption: 'будь-який',
       selectedMetalOption: 'будь-який',
-      selectedColorOption: 'будь-який'
+      selectedColorOption: 'будь-який',
+      searchText: '' // Додано для тексту пошуку
     }
   },
   methods: {
     filterJewelryItems() {
       this.jewelryItemsSorted = this.jewelryItems;
+
       if (this.selectedProductOption != 'будь-який') {
         this.jewelryItemsSorted = this.jewelryItemsSorted.filter((item) => {
           return item.type == this.selectedProductOption;
         });
       }
+
       if (this.selectedMetalOption != 'будь-який') {
         this.jewelryItemsSorted = this.jewelryItemsSorted.filter((item) => {
           return item.metal_name == this.selectedMetalOption;
-        })
-      }
-      if (this.selectedColorOption != 'будь-який') {
-        this.jewelryItemsSorted = this.jewelryItemsSorted.filter((item) => {
-          let regex = new RegExp('\(' + this.selectedColorOption + '\)', 'gm');
-          return regex.test(item.materials_list);
         });
+      }
+
+      if (this.selectedColorOption != 'будь-який') {
+        let regex = new RegExp(`\\(${this.selectedColorOption}\\)`, 'gm');
+        this.jewelryItemsSorted = this.jewelryItemsSorted.filter((item) => regex.test(item.materials_list));
+      }
+
+      if (this.searchText.trim() !== '') {
+        const searchLower = this.searchText.toLowerCase();
+        this.jewelryItemsSorted = this.jewelryItemsSorted.filter((item) =>
+          item.name.toLowerCase().includes(searchLower)
+        );
       }
     },
     handleProductSelection(selectedProductOption) {
@@ -49,10 +58,14 @@ export default {
     handleColorSelection(selectedColorOption) {
       this.selectedColorOption = selectedColorOption.label.toLowerCase();
       this.filterJewelryItems();
+    },
+    handleSearchInput(event) {
+      this.searchText = event.target.value; // Оновлюємо текст пошуку
+      this.filterJewelryItems();
     }
   },
   mounted() {
-    // Fetch data from the Express server
+    // Fetching logic залишається без змін
     fetch('/api/data/products-extended')
       .then(response => response.json())
       .then(data => {
@@ -97,8 +110,7 @@ export default {
           this.colorOptions.push({
             label: color.name.charAt(0).toUpperCase() + color.name.slice(1),
             color: color.code
-          }
-          );
+          });
         }
       })
       .catch(error => {
@@ -117,6 +129,17 @@ export default {
         </h2>
       </div>
       <div class="row dropdown-gap align-items-center">
+        <!-- Поле пошуку -->
+        <div>
+          <div class="dropdown-tw">Пошук: </div>
+          <input 
+            type="text" 
+            v-model="searchText" 
+            @input="handleSearchInput" 
+            placeholder="Введіть назву товару" 
+            class="form-control" 
+          />
+        </div>
         <div>
           <div class="dropdown-tw">Тип виробу: </div>
           <Dropdown 
@@ -141,7 +164,6 @@ export default {
             @update:modelValue="handleColorSelection"
           />
         </div>
-        
       </div>
       <div class="row">
         <div v-for="item in jewelryItemsSorted" :key="item.id" class="col-sm-6 col-md-4 col-lg-3" style="margin-top: 25px">
