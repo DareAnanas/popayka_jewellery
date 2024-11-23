@@ -40,7 +40,7 @@
                   </p>
                   <!-- Кнопка -->
                   <div class="mt-auto align-self-center">
-                    <a href="" class="btn-box">
+                    <a class="btn-box">
                       Детальніше
                     </a>
                   </div>
