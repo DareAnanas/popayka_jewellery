@@ -68,31 +68,34 @@ export default {
           class="accordion-content"
         >
           <p>{{ item.content }}</p>
-          <div v-for="contentItem in contentItems" :key="contentItem.id" class="col-sm-6 col-md-4 col-lg-3" style="margin-top: 25px">
-            <div class="box">
-              <a href="">
-                <div class="img-box">
-                  <img :src="`api/products/${contentItem.id}.png`" alt="">
+
+            <div class="d-flex justify-content-center">
+              <div v-for="contentItem in contentItems" :key="contentItem.id" class="col-sm-6 col-md-4 col-lg-3" style="margin-top: 25px">
+                <div class="box">
+                  <a href="">
+                    <div class="img-box">
+                      <img :src="`api/products/${contentItem.id}.png`" alt="" style="width: 150px">
+                    </div>
+                    <div class="detail-box">
+                      <h6>
+                        {{ contentItem.name }}
+                      </h6>
+                      <h6>
+                        Ціна
+                        <span>
+                          ₴{{ contentItem.price }}
+                        </span>
+                      </h6>
+                    </div>
+                    <div class="new">
+                      <span>
+                        Новинка
+                      </span>
+                    </div>
+                  </a>
                 </div>
-                <div class="detail-box">
-                  <h6>
-                    {{ contentItem.name }}
-                  </h6>
-                  <h6>
-                    Ціна
-                    <span>
-                      ₴{{ contentItem.price }}
-                    </span>
-                  </h6>
-                </div>
-                <div class="new">
-                  <span>
-                    Новинка
-                  </span>
-                </div>
-              </a>
+              </div>
             </div>
-          </div>
         </div>
       </transition>
     </div>
