@@ -122,6 +122,40 @@ app.get('/api/data/product-colors', (req, res) => {
     });
 });
 
+app.get('/api/data/currency-rates', async (req, res) => {
+    try {
+        const response = await fetch('https://api.privatbank.ua/p24api/pubinfo?exchange&coursid=5');
+        if (!response.ok) {
+            throw new Error(`Failed to fetch data: ${response.statusText}`);
+        }
+
+        const data = await response.json();
+        res.json(data);
+    } catch (error) {
+        console.error('Error fetching currency rates:', error.message);
+        res.status(500).json({ error: 'Failed to fetch currency rates' });
+    }
+});
+
+app.get('/api/data/currency-rates-fake', (req, res) => {
+    const data =
+    [
+        {
+        "ccy":"EUR",
+        "base_ccy":"UAH",
+        "buy":"4.20000",
+        "sale":"4.00000"
+        },
+        {
+        "ccy":"USD",
+        "base_ccy":"UAH",
+        "buy":"8.05000",
+        "sale":"8.65000"
+        }
+    ];
+    res.json(data);
+});
+
 // Start the Express server
 app.listen(3000, () => {
     console.log('Server is running on http://localhost:3000');
