@@ -14,7 +14,7 @@ const db = mysql.createConnection({
     host: 'junction.proxy.rlwy.net', // Replace with your MariaDB host
     port: 32806,
     user: 'root', // Replace with your MariaDB user
-    password: 'LmdcX~7_5rUGyfhT.aYg68FqukY1UCjT', // Replace with your MariaDB password
+    password: ${{MariaDB.MARIADB_ROOT_PASSWORD}}, // Replace with your MariaDB password
     database: 'railway', // Replace with your MariaDB database
 });
 
