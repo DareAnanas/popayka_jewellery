@@ -31,9 +31,8 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '../dist', 'index.html'));
 });
 
-// Define route to fetch data from the table
 app.get('/api/data/products', (req, res) => {
-    const sql = 'SELECT id, name, price FROM products'; // Replace with your actual table name
+    const sql = 'SELECT id, name, price FROM products';
     db.query(sql, (err, results) => {
         if (err) {
             res.status(500).send('Error retrieving data');

@@ -29,7 +29,7 @@ export default {
       <div class="row">
         <div v-for="item in jewelryItems" :key="item.id" class="col-sm-6 col-md-4 col-lg-3" style="margin-top: 25px">
           <div class="box">
-            <a href="">
+            <a>
               <div class="img-box">
                 <img :src="`api/products/${item.id}.png`" alt="">
               </div>
