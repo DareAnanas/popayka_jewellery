@@ -4,7 +4,7 @@
       <div class="row info_form_social_row">
         <div class="col-md-8 col-lg-9">
           <div class="info_form">
-            <form action="">
+            <form>
               <input type="email" placeholder="Введіть свою пошту">
               <button>
                 <i class="fa fa-arrow-right" aria-hidden="true"></i>
@@ -15,13 +15,13 @@
         <div class="col-md-4 col-lg-3">
 
           <div class="social_box">
-            <a href="">
+            <a>
               <i class="fa fa-facebook" aria-hidden="true"></i>
             </a>
-            <a href="">
+            <a>
               <i class="fa fa-twitter" aria-hidden="true"></i>
             </a>
-            <a href="">
+            <a>
               <i class="fa fa-linkedin" aria-hidden="true"></i>
             </a>
           </div>
@@ -79,19 +79,19 @@
             Контакти
           </h4>
           <div class="info_contact">
-            <a href="">
+            <a>
               <i class="fa fa-map-marker" aria-hidden="true"></i>
               <span>
                 вул. Немирівська 13
               </span>
             </a>
-            <a href="">
+            <a>
               <i class="fa fa-phone" aria-hidden="true"></i>
               <span>
                 тел. +380989745446
               </span>
             </a>
-            <a href="">
+            <a>
               <i class="fa fa-envelope"></i>
               <span>
                 popyaka.jewellry@gmail.com
