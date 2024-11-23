@@ -1,43 +1,50 @@
 <script>
 import Accordion from '@/components/Accordion.vue';
+
 export default {
   components: {
-     Accordion,
+    Accordion,
   },
   data() {
     return {
+      jewelryItems: {
+        'діамант': [],
+        'малахіт': [],
+        'платина': []
+      },
       accordionItems: [
-        { title: 'Знижка 15% на прикраси з діамантами', content: 'Елемент' },
-        { title: 'Знижка до 10% на вироби з малахіту', content: 'Знижка до 10% на вироби з малахіту' },
-        { title: 'Платинові вироби 20% знижка', content: 'Content for item 3.' },
+        { title: 'Знижка 15% на прикраси з діамантами', content: [] },
+        { title: 'Знижка до 10% на вироби з малахіту', content: [] },
+        { title: 'Платинові вироби 20% знижка', content: [] },
       ],
-      jewelryItems: []
     };
   },
   mounted() {
-    // Fetch data from the Express server
-    fetch('/api/data/products')
+    fetch('/api/data/products-extended')
       .then(response => response.json())
       .then(data => {
-        this.jewelryItems = data.slice(0, 3);
+        this.jewelryItems['діамант'] = data.filter(item => [5, 11, 14].includes(item.id));
+        this.jewelryItems['малахіт'] = data.filter(item => [1, 4, 6].includes(item.id));
+        this.jewelryItems['платина'] = data.filter(item => [12].includes(item.id));
+        this.accordionItems[0].content = this.jewelryItems['діамант'];
+        this.accordionItems[1].content = this.jewelryItems['малахіт'];
+        this.accordionItems[2].content = this.jewelryItems['платина'];
       })
       .catch(error => {
         console.error('Error fetching jewelry items:', error);
-      })
+      });
   }
 };
-
 </script>
 
 <template>
   <section class="layout_padding">
     <div class="container">
       <div class="heading_container heading_center">
-        <h2>
-          Пропозиції
-        </h2>
+        <h2>Пропозиції</h2>
       </div>
-      <Accordion :items="accordionItems" :contentItems="jewelryItems"/>
+      <!-- Вставляємо компонент Accordion -->
+      <Accordion :items="accordionItems" />
     </div>
   </section>
 </template>

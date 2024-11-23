@@ -60,12 +60,11 @@ export default {
       this.filterJewelryItems();
     },
     handleSearchInput(event) {
-      this.searchText = event.target.value; // Оновлюємо текст пошуку
+      this.searchText = event.target.value;
       this.filterJewelryItems();
     }
   },
   mounted() {
-    // Fetching logic залишається без змін
     fetch('/api/data/products-extended')
       .then(response => response.json())
       .then(data => {
@@ -129,7 +128,6 @@ export default {
         </h2>
       </div>
       <div class="row dropdown-gap align-items-center">
-        <!-- Поле пошуку -->
         <div>
           <div class="dropdown-tw">Пошук: </div>
           <input 

@@ -1,49 +1,3 @@
-<script>
-export default {
-  name: 'Accordion',
-  props: {
-    items: {
-      type: Array,
-      required: true,
-    },
-    contentItems: {
-      type: Array,
-      required: true
-    }
-  },
-  data() {
-    return {
-      activeIndex: null,
-    };
-  },
-  methods: {
-    toggle(index) {
-      this.activeIndex = this.activeIndex === index ? null : index;
-    },
-    isActive(index) {
-      return this.activeIndex === index;
-    },
-    onEnter(el) {
-      el.style.maxHeight = '0';
-      el.style.opacity = '0';
-      el.style.transition = 'max-height 0.3s ease, opacity 0.3s ease';
-      requestAnimationFrame(() => {
-        el.style.maxHeight = el.scrollHeight + 'px';
-        el.style.opacity = '1';
-      });
-    },
-    onLeave(el) {
-      el.style.maxHeight = el.scrollHeight + 'px';
-      el.style.transition = 'max-height 0.3s ease, opacity 0.3s ease';
-      requestAnimationFrame(() => {
-        el.style.maxHeight = '0';
-        el.style.opacity = '0';
-      });
-    },
-  },
-};
-</script>
-
 <template>
   <div class="accordion">
     <div 
@@ -51,103 +5,104 @@ export default {
       :key="index" 
       class="accordion-item"
     >
+      <!-- Заголовок акордеона -->
       <div 
-        class="accordion-header" 
-        @click="toggle(index)"
+        class="accordion-header"
+        @click="toggleAccordion(index)"
       >
-        <h3>{{ item.title }}</h3>
+        <h4>{{ item.title }}</h4>
       </div>
-      <transition
-        name="accordion"
-        @enter="onEnter"
-        @leave="onLeave"
-      >
+
+      <!-- Контент акордеона з анімацією -->
+      <transition name="accordion">
         <div 
-          v-show="isActive(index)" 
-          ref="content"
+          v-if="activeIndex === index" 
           class="accordion-content"
         >
-          <p>{{ item.content }}</p>
-
-            <div class="d-flex justify-content-center">
-              <div v-for="contentItem in contentItems" :key="contentItem.id" class="col-sm-6 col-md-4 col-lg-3" style="margin-top: 25px">
-                <div class="box">
-                  <a href="">
-                    <div class="img-box">
-                      <img :src="`api/products/${contentItem.id}.png`" alt="" style="width: 150px">
-                    </div>
-                    <div class="detail-box">
-                      <h6>
-                        {{ contentItem.name }}
-                      </h6>
-                      <h6>
-                        Ціна
-                        <span>
-                          ₴{{ contentItem.price }}
-                        </span>
-                      </h6>
-                    </div>
-                    <div class="new">
-                      <span>
-                        Новинка
-                      </span>
-                    </div>
-                  </a>
-                </div>
+          <div class="row">
+            <div 
+              v-for="contentItem in item.content" 
+              :key="contentItem.id" 
+              class="col-sm-6 col-md-4 col-lg-3"
+              style="margin-top: 25px"
+            >
+              <div class="box">
+                <a href="">
+                  <div class="img-box">
+                    <img :src="`api/products/${contentItem.id}.png`" alt="">
+                  </div>
+                  <div class="detail-box">
+                    <h6>{{ contentItem.name }}</h6>
+                    <h6>
+                      Ціна
+                      <span>₴{{ contentItem.price }}</span>
+                    </h6>
+                  </div>
+                </a>
               </div>
             </div>
+          </div>
         </div>
       </transition>
     </div>
   </div>
 </template>
 
-<style scoped>
-h3 {
-  font-family: 'Playfair Display', serif;
-}
-.accordion {
-  width: 100%;
-  max-width: 600px;
-  margin: auto;
-  border: 1px solid #ddd;
-  overflow: hidden;
-}
+<script>
+export default {
+  props: {
+    items: {
+      type: Array,
+      required: true,
+    },
+  },
+  data() {
+    return {
+      activeIndex: null,
+    };
+  },
+  methods: {
+    toggleAccordion(index) {
+      this.activeIndex = this.activeIndex === index ? null : index;
+    },
+  },
+};
+</script>
 
-.accordion-item + .accordion-item {
-  border-top: 1px solid #ddd;
+<style scoped>
+.accordion-item {
+  border: 1px solid #ddd;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  overflow: hidden;
 }
 
 .accordion-header {
-  background-color: #f1f1f1;
+  background: #f7f7f7;
   cursor: pointer;
-  padding: 15px;
-  transition: background-color 0.3s;
-}
-
-.accordion-header:hover {
-  background-color: #e0e0e0;
+  padding: 10px 20px;
+  font-size: 18px;
+  font-weight: bold;
 }
 
 .accordion-content {
-  overflow: hidden;
-  max-height: 0;
-  opacity: 0;
-  padding: 10px;
+  padding: 20px;
+  background: #fff;
 }
 
+/* Анімація для акордеону */
 .accordion-enter-active,
 .accordion-leave-active {
   transition: max-height 0.3s ease, opacity 0.3s ease;
 }
-
-.accordion-enter-from {
-  max-height: 0;
-  opacity: 0;
-}
-
+.accordion-enter-from,
 .accordion-leave-to {
   max-height: 0;
   opacity: 0;
+}
+.accordion-enter-to,
+.accordion-leave-from {
+  max-height: 500px; /* Орієнтовна висота. Можна збільшити за потреби */
+  opacity: 1;
 }
 </style>
