@@ -5,7 +5,7 @@
         <div class="col-md-8 col-lg-9">
           <div class="info_form">
             <form action="">
-              <input type="email" placeholder="Enter your email">
+              <input type="email" placeholder="Введіть свою пошту">
               <button>
                 <i class="fa fa-arrow-right" aria-hidden="true"></i>
               </button>
@@ -31,27 +31,27 @@
         <div class="col-md-6 col-lg-3">
           <div class="info_links">
             <h4>
-              Menu
+              Меню
             </h4>
             <div class="info_links_menu">
-              <RouterLink to="/">Home</RouterLink>
-              <RouterLink to="/about">About</RouterLink>
-              <RouterLink to="/shop">Shop</RouterLink>
-              <RouterLink to="/blog">Blog</RouterLink>
+              <RouterLink to="/">Головна</RouterLink>
+              <RouterLink to="/shop">Каталог</RouterLink>
+              <RouterLink to="/offers">Пропозиції</RouterLink>
+              <RouterLink to="/about">Про нас</RouterLink>
             </div>
           </div>
         </div>
         <div class="col-md-6 col-lg-3">
           <div class="info_insta">
             <h4>
-              Instagram
+              Інстаграм
             </h4>
             <div class="insta_box">
               <div class="img-box">
                 <img src="@/assets/images/products/1.png" alt="">
               </div>
               <p>
-                long established fact that a reader
+                Малахітові прикраси
               </p>
             </div>
             <div class="insta_box">
@@ -59,7 +59,7 @@
                 <img src="@/assets/images/products/2.png" alt="">
               </div>
               <p>
-                long established fact that a reader
+                Золоті ланцюжки
               </p>
             </div>
           </div>
@@ -67,34 +67,34 @@
         <div class="col-md-6 col-lg-3">
           <div class="info_detail">
             <h4>
-              About Us
+              Про нас
             </h4>
             <p class="mb-0">
-              when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to
+              Наша ювелірна майстерня об’єднує досвідчених митців та інноваторів. Ми віримо, що кожна прикраса має розповідати історію, відображати емоції та надихати.
             </p>
           </div>
         </div>
         <div class="col-md-6 col-lg-3">
           <h4>
-            Contact Us
+            Контакти
           </h4>
           <div class="info_contact">
             <a href="">
               <i class="fa fa-map-marker" aria-hidden="true"></i>
               <span>
-                Location
+                вул. Немирівська 13
               </span>
             </a>
             <a href="">
               <i class="fa fa-phone" aria-hidden="true"></i>
               <span>
-                Call +01 1234567890
+                тел. +380989745446
               </span>
             </a>
             <a href="">
               <i class="fa fa-envelope"></i>
               <span>
-                demo@gmail.com
+                popyaka.jewellry@gmail.com
               </span>
             </a>
           </div>

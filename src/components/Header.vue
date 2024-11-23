@@ -59,7 +59,6 @@ export default {
                 <RouterLink @click="openNav" to="/shop">Каталог</RouterLink>
                 <RouterLink @click="openNav" to="/offers">Пропозиції</RouterLink>
                 <RouterLink @click="openNav" to="/about">Про нас</RouterLink>
-                <RouterLink @click="openNav" to="/blog">Блог</RouterLink>
               </div>
             </div>
           </div>
