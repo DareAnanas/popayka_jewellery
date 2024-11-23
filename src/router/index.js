@@ -29,7 +29,14 @@ const router = createRouter({
       name: 'offers',
       component: () => import('../views/OffersView.vue')
     },
-  ]
+  ],
+  scrollBehavior(to, from, savedPosition) {
+    if (savedPosition) {
+      return savedPosition;
+    } else {
+      return { top: 0 };
+    }
+  },
 })
 
 export default router
