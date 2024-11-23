@@ -33,4 +33,10 @@
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
+
+@media (max-width: 992px) {
+  .detail-box {
+    padding-top: 100px !important;
+  }
+}
 </style>
