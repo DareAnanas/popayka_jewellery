@@ -3,28 +3,28 @@
     <div class="container">
       <div class="heading_container">
         <h2>
-          Latest From Blog
+          Новини
         </h2>
       </div>
       <div class="row">
         <div class="col-md-6">
           <div class="box">
             <div class="img-box">
-              <img src="@/assets/images/b1.jpg" alt="">
+              <img src="@/assets/images/platinum-rings.jpg" alt="">
               <h4 class="blog_date">
-                14 <br>
-                July
+                20 <br>
+                листопада
               </h4>
             </div>
             <div class="detail-box">
               <h5>
-                Molestiae ad reiciendis dignissimos
+                Завезені вироби з платини
               </h5>
               <p>
-                alteration in some form, by injected humour, or randomised words which don't look even slightly believable.
+                Нові технології надали змогу працювати з платиновими виробами. Деякі з них ви можете побачити у наявності.
               </p>
               <a href="">
-                Read More
+                Читати далі
               </a>
             </div>
           </div>
@@ -32,21 +32,21 @@
         <div class="col-md-6">
           <div class="box">
             <div class="img-box">
-              <img src="@/assets/images/b2.jpg" alt="">
+              <img src="@/assets/images/jewellery-shell.jpg" alt="">
               <h4 class="blog_date">
-                15 <br>
-                July
+                23 <br>
+                листопада
               </h4>
             </div>
             <div class="detail-box">
               <h5>
-                Dolores vel maiores voluptatem enim
+                Було проведено екперимети з ювелірними виробами
               </h5>
               <p>
-                alteration in some form, by injected humour, or randomised words which don't look even slightly believable.
+                У ході екперименту було здійснено спробу зробити ювелірний виріб із ракушки молюска.
               </p>
               <a href="">
-                Read More
+                Читати далі
               </a>
             </div>
           </div>

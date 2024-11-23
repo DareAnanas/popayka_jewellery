@@ -70,7 +70,7 @@ export default {
     <div class="container">
       <div class="heading_container">
         <h2>
-          Testimonial
+          Відгуки клієнтів
         </h2>
       </div>
       <div id="carouselExample2Controls" class="carousel slide" data-ride="carousel">

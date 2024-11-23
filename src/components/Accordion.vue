@@ -19,29 +19,36 @@
           v-if="activeIndex === index" 
           class="accordion-content"
         >
-          <div class="row">
+          <div class="row justify-content-center">
             <div 
               v-for="contentItem in item.content" 
               :key="contentItem.id" 
               class="col-sm-6 col-md-4 col-lg-3"
-              style="margin-top: 25px"
             >
-              <div class="box">
-                <a href="">
-                  <div class="img-box">
-                    <img :src="`api/products/${contentItem.id}.png`" alt="">
+              <div class="card h-100 shadow-sm">
+                <!-- Зображення картки -->
+                <img 
+                  :src="`api/products/${contentItem.id}.png`" 
+                  class="card-img-top" 
+                  :alt="contentItem.name"
+                >
+                <!-- Тіло картки -->
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title text-center">{{ contentItem.name }}</h5>
+                  <p class="card-text text-center text-muted mb-3">
+                    Ціна: <span class="fw-bold">₴{{ contentItem.price }}</span>
+                  </p>
+                  <!-- Кнопка -->
+                  <div class="mt-auto align-self-center">
+                    <a href="" class="btn-box">
+                      Детальніше
+                    </a>
                   </div>
-                  <div class="detail-box">
-                    <h6>{{ contentItem.name }}</h6>
-                    <h6>
-                      Ціна
-                      <span>₴{{ contentItem.price }}</span>
-                    </h6>
-                  </div>
-                </a>
+                </div>
               </div>
             </div>
           </div>
+
         </div>
       </transition>
     </div>
@@ -90,7 +97,6 @@ export default {
   background: #fff;
 }
 
-/* Анімація для акордеону */
 .accordion-enter-active,
 .accordion-leave-active {
   transition: max-height 0.3s ease, opacity 0.3s ease;
@@ -102,7 +108,27 @@ export default {
 }
 .accordion-enter-to,
 .accordion-leave-from {
-  max-height: 500px; /* Орієнтовна висота. Можна збільшити за потреби */
+  max-height: 500px;
   opacity: 1;
+}
+
+.accordion-header h4 {
+  font-family: 'Playfair Display';
+}
+
+.btn-box {
+  display: inline-block;
+  padding: 10px 40px;
+  background-color: #fd9c6b;
+  color: #ffffff;
+  border-radius: 5px;
+  border: 1px solid #fd9c6b;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+}
+
+.btn-box:hover {
+  background-color: transparent;
+  color: #fd9c6b;
 }
 </style>
