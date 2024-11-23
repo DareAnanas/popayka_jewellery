@@ -40,7 +40,7 @@
                   </p>
                   <!-- Кнопка -->
                   <div class="mt-auto align-self-center">
-                    <a class="btn-box">
+                    <a href="https://gems.ua/" class="btn-box">
                       Детальніше
                     </a>
                   </div>
